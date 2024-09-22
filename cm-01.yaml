@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my-con-01
+data:
+  firstname: dd
+  lastname: cc

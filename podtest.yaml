@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod 
+metadata: 
+    name: my-pod
+    labels:
+      env: demo
+spec:
+    containers:
+      - name: busybox-pod
+        image: busybox:1.28
+        env:
+          - name: FIRSTNAME
+            value: DD
+        command: ['sh', '-c', 'echo this app is running && sleep 3600']
+    initContainers:
+      - name: init-myservice
+        image: busybox:1.28
+        command: ['sh', '-c']
+        args: ['until nslookup my-service.default.svc.cluster.local; do echo waiting for my service; sleep 2; done']
+      - name: init-mydb
+        image: busybox:1.28
+        command: ['sh', '-c']
+        args: ['until nslookup my-db-service.default.svc.cluster.local; do echo waiting for my db service; sleep 2 ; done']
+
+
