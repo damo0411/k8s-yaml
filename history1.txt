@@ -1,0 +1,865 @@
+    1  curl https://get.docker.com/|bash
+    2  wget https://golang.org/dl/go1.20.0.linux-amd64.tar.gz
+    3  sudo apt install wget
+    4  wget https://golang.org/dl/go1.20.0.linux-amd64.tar.gz
+    5  snap install golang
+    6  sudo apt install snapd
+    7  sudo snap install go --classic
+    8  go version
+    9  [ $(uname -m) = x86_64 ] && curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.24.0/kind-darwin-amd64
+   10  chmod +x ./kind
+   11  mv ./kind /some-dir-in-your-PATH/kind
+   12  pwd
+   13  mv ./kind /root/kind
+   14  mkdir -p kind
+   15  mkdir -p Kind
+   16  mv ./kind /root/Kind
+   17  kind create cluster --image=kindest/node:v1.29.8@sha256:d46b7aa29567e93b27f7531d258c372e829d7224b25e3fc6ffdefed12476d3aa --name cluster-cka-1 
+   18  curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.20.0/kind-linux-amd64
+   19  chmod +x ./kind
+   20  sudo mv ./kind /usr/local/bin/kind
+   21  kind --version
+   22  kind create cluster --image=kindest/node:v1.29.8@sha256:d46b7aa29567e93b27f7531d258c372e829d7224b25e3fc6ffdefed12476d3aa --name cluster-cka-1 
+   23  curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+   24  chmod +x ./kubectl
+   25  sudo mv ./kubectl /usr/local/bin/kubectl
+   26  kubectl version --client
+   27  kubectl cluster-info
+   28  vi kind-example-config.yaml
+   29  kind create cluster --image=kindest/node:v1.29.8@sha256:d46b7aa29567e93b27f7531d258c372e829d7224b25e3fc6ffdefed12476d3aa --name cluster-cka-2 --config kind-example-config.yaml 
+   30  kubectl get cluster
+   31  kubectl get nodes
+   32  kubectl config get-contexts
+   33  kubectl config set-cluster kind-cluster-cka-1
+   34  kubectl config get-contexts
+   35  kubectl config set-cluster kind-cluster-cka-1
+   36  kubectl config get-contexts
+   37  kubectl config set-cluster kind-cluster-cka-2
+   38  kubectl config get-contexts
+   39  kubectl config set-cluster kind-cluster-cka-1
+   40  kubectl config get-contexts
+   41  kubectl config use-context kind-cluster-cka-1
+   42  kubectl config get-contexts
+   43  docker version
+   44  uptime
+   45  kubectl get clustre
+   46  kubectl get cluster
+   47  kubectl configs get-contents
+   48  kubectl config get-contents
+   49  kubectl config get-contexts
+   50  kubectl config set-cluster kind-cluster-cka-2
+   51  kubectl config get-contexts
+   52  kubectl get nodes
+   53  kubectl config use-context kind-cluster-cka-2
+   54  kubectl get nodes
+   55  kubectl config get-contexts
+   56  kubectl config use-context kind-cluster-cka-1
+   57  kubectl config get-contexts
+   58  kubectl config use-context kind-cluster-cka-2
+   59  kubectl config get-contexts
+   60  kubectl get nodes
+   61  kubectl get pods
+   62  kubectl run app01 --image=nginx:latest
+   63  kubectl run app02 --image=nginx:latest
+   64  kubectl get pods -o wide
+   65  kubectl delete pod app01
+   66  kubectl delete pod app02
+   67  kubectl get pods
+   68  kubectl run app01 --image=nginx:latest
+   69  vi pod.yaml
+   70  kubectl apply -f pod.yaml 
+   71  vi pod.yaml
+   72  kubectl apply -f pod.yaml 
+   73  vi pod.yaml
+   74  kubectl apply -f pod.yaml 
+   75  kubectl run my-app-02 --image=nginx:latest --dry-run=client  -o yaml >> pod2.yaml
+   76  kubectl get pods
+   77  ls -ltr
+   78  kubectl apply -f pod2.yaml 
+   79  kubectl get pods
+   80  kubectl inspect pods my-app-02
+   81  kubectl describe pods my-app-02
+   82  kubectl inspect pods my-app-02
+   83  kubectl edit pods my-app-02
+   84  kubectl get pods
+   85  kubectl edit pods my-app-02
+   86  kubectl get pods
+   87  kubectl delete pods my*
+   88  kubectl delete pods my-*
+   89  kubectl delete pods my-app-02
+   90  kubectl delete pods my-pod
+   91  kubectl delete pods app01
+   92  ls -ltr
+   93  rm -rf pod*
+   94  ls -ltr
+   95  kubectl run pod --image=nginx:latest
+   96  kubectl get pods
+   97  vi pod.yaml
+   98  ls -ltr
+   99  kubectl apply -f pod.yaml 
+  100  vi pod.yaml
+  101  kubectl apply -f pod.yaml 
+  102  vi pod.yaml
+  103  kubectl apply -f pod.yaml 
+  104  vi pod.yaml
+  105  kubectl get pods
+  106  kubectl run my-app-01 --image=nginx:latest --dry-run=client -o yaml >> pod2.yaml
+  107  kubectl get pods
+  108  kubectl apply -f pod2.yaml 
+  109  kubectl get pods
+  110  kubectl get pods --show-labels
+  111  kuebctl get pods
+  112  kubectl get pods
+  113  kubectl delete pod my-app-01
+  114  kubectl delete pod my-pod-01
+  115  kubectl delete pod pod
+  116  kubectl get pods
+  117  ls -ltr
+  118  rm -rf pod*
+  119  ls -ltr
+  120  kubectl get pods
+  121  kubectl run rs my-replica-set --replicas=3 --image=nginx:latest --dry-run=client -o yaml > replicaset.yaml
+  122  kubectl run  my-replica-set --replicas=3 --image=nginx:latest --dry-run=client -o yaml > replicaset.yaml
+  123  kubectl run my-replica-set --replicas=3 --image=nginx:latest --dry-run=client -o yaml > replicaset.yaml
+  124  kubectl create my-replica-set --replicas=3 --image=nginx:latest --dry-run=client -o yaml > replicaset.yaml
+  125  kubectl run my-replica-set --replicas=3 --image=nginx:latest --dry-run=client -o yaml > replicaset.yaml
+  126  kubectl run --help
+  127  kubectl run my-replica-set --replicas=3 --image=nginx:latest --dry-run=client -o yaml > replicaset.yaml
+  128  kubectl create deployment my-replica-set --image=nginx:latest --dry-run=client -o ymal > replicaset.yaml4
+  129  kubectl create deployment my-replica-set --image=nginx:latest --dry-run=client -o ymal > replicaset.yaml
+  130  kubectl create deployment my-replica-set --image=nginx:latest --dry-run=client -o yaml > replicaset.yaml
+  131  ls -ltr
+  132  cat replicaset.yaml
+  133  kubectl create ReplicaSet my-replica-set --image=nginx:latest --dry-run=client -o yaml > replicaset2.yaml
+  134  cat replicaset.yaml
+  135  vi replicaset.yaml
+  136  kubectl apply -f replicaset.yaml
+  137  kubectl get rs
+  138  kubectl get pods
+  139  kubectl get all
+  140  kubectl create Deployment --image=nginx:latest --dry-run=client -o yaml > deployment.yaml
+  141  kubectl create Deployment my-deployment --image=nginx:latest --dry-run=client -o yaml > deployment.yaml
+  142  kubectl create deployment my-deployment --image=nginx:latest --dry-run=client -o yaml > deployment.yaml
+  143  ls -ltr
+  144  rm -rf replicaset.yaml4
+  145  rm -rf replicaset2.yaml 
+  146  vi deployment.yaml 
+  147  kubectl apply -f deployment.yaml 
+  148  kubectl get all
+  149  kuebctl describe rs replicaset.apps/my-replica-set
+  150  kubectl describe rs replicaset.apps/my-replica-set
+  151  kubectl describe rs/replicaset.apps/my-replica-set
+  152  kubectl describe rs/my-replica-set
+  153  kubectl get all
+  154  kubectl get deploy/my-deployment
+  155  kubectl describe deploy/my-deployment
+  156  kubectl get all
+  157  kubectl delete my-deployment
+  158  kubectl delete deploy/my-deployment
+  159  kubectl get all
+  160  kubectl delete rs/my-replica-set
+  161  kubectl get all
+  162  ls -ltr
+  163  kubectl create --help
+  164  kubectl create deployment my-replica-set --image=nginx:latest --dry-run=client -o yaml > replicaset.yaml
+  165  ls -ltr
+  166  vi replicaset.yaml 
+  167  kubectl apply -f replicaset.yaml 
+  168  kubectl get rs
+  169  kubectl get pods
+  170  kubectl describe pod my-replica-set-6hxv4
+  171  kubectl get pods --show-labels
+  172  kubectl get rs --show-labels
+  173  kubectl scale --replicas=4 rs/my-replica-set
+  174  kubectl get pods --show-labels
+  175  vi replicaset.yaml 
+  176  kubectl get pods --show-labels
+  177  kubectl scale --replicas=6 rs/my-replica-set
+  178  kubectl get pods --show-labels
+  179  kubectl explain deployment
+  180  kubectl create deployment my-deployment --image=nginx:1.23.0 --dry-run=client -o yaml > deployment2.yaml
+  181  vi deployment2.yaml 
+  182  kuebctl apply -f deployment2.yaml 
+  183  kubectl apply -f deployment2.yaml 
+  184  kubectl get all
+  185  kubectl get pods --show-label
+  186  kubectl get pods --show-labels
+  187  kubectl get deployment --show-labels
+  188  kubectl get mydeployment --show-labels
+  189  kubectl get deployment --show-labels
+  190  kubectl get rs --show-labels
+  191  kubectl set image deployment/my-deployment nginx=nginx.1.23.4
+  192  kubectl get all
+  193  kubectl set image deployment/my-deployment nginx=nginx:1.23.4
+  194  kubectl get all
+  195  kubectl rollout history deploy/my-deployment
+  196  vi deployment2.yaml 
+  197  kubectl apply -f deployment2.yaml 
+  198  kubectl get all
+  199  kuebctl rollout history deployment/my-deployment
+  200  kubectl rollout history deployment/my-deployment
+  201  kubectl rollout undo deployment/my-deployment --to-revision=1
+  202  kubectl get all
+  203  kubectl delete rs my-replica-set
+  204  kubectl get all
+  205  kubectl delete deploy my-deployment
+  206  kubectl get all
+  207  kubectl configs get-context
+  208  kubectl config get-contexts
+  209  kubectl config use-contexts kind-cluster-cka-1
+  210  kubectl config use-context kind-cluster-cka-1
+  211  kubectl config use-context kind-cluster-cka-2
+  212  kubectl config get-contexts
+  213  kubectl config use-context kind-cluster-cka-1
+  214  kubectl config get-contexts
+  215  kubectl config use-context kind-cluster-cka-2
+  216  kubectl get pods -A -o wide
+  217  kubectl get ns -A
+  218  kubectl get ns -A -o wide
+  219  kubectl create ns ns1
+  220  kubectl create ns ns2
+  221  kubectl create deploy --name deploy-ns1 --image nginx:latest -ns ns1
+  222  kubectl create deploy --name deploy-ns1 --image nginx:latest -n ns1
+  223  kubectl create deploy deploy-ns1 --image nginx:latest -n ns1
+  224  kubectl get pods -A -o wide -n ns1
+  225  kubectl get pods -o wide -n ns1
+  226  kubectl create deploy deploy-ns2 --image nginx:latest -n ns2
+  227  kubectl get pods -o wide -n ns2
+  228  kubectl exec -it deploy-ns1-dd67d7d6-vzgpp -n ns1 -- sh
+  229  kubectl get pods -o wide -n ns2
+  230  kubectl get pods -o wide -n ns1
+  231  kubectl exec -it deploy-ns2-56697bd88c-2ddhs -n ns2 -- sh
+  232  kubectl expose deploy/deploy-ns1 --name=my-svc-1 --port 80 -n ns1
+  233  kubectl expose deploy/deploy-ns2 --name=my-svc-2 --port 80 -n ns2
+  234  kubectl get all -n ns1
+  235  kubectl get all -n ns2
+  236  kubectl scale --replicas=3 -n ns1 deploy-ns1
+  237  kubectl scale --replicas=3 -n ns1 deploy/deploy-ns1
+  238  kubectl scale --replicas=3 -n ns2 deploy/deploy-ns2
+  239  kubectl get all -n ns1
+  240  kubectl get all -n ns2
+  241  kubectl exec -it deploy-ns1-dd67d7d6-vzgpp -n ns1 -- sh
+  242  kubectl get all -n ns1
+  243  kubectl get all -n ns2
+  244  kubectl delete deploy-ns2
+  245  kubectl delete deploy-ns2 -n ns2
+  246  kubectl delete deploy/deploy-ns2 -n ns2
+  247  kubectl delete deploy/deploy-ns1 -n ns1
+  248  kubectl delete svc/my-svc-2 -n ns2
+  249  kubectl delete svc/my-svc-1 -n ns1
+  250  kubectl delete n ns1
+  251  kubectl delete n/ns1
+  252  kubectl delete namespace/ns1
+  253  kubectl delete namespace/ns2
+  254  clear
+  255  kubectl create deploy/my-app --image=nginx:1.23.4-alpine 
+  256  kubectl create deploy/my-app --image nginx:1.23.4-alpine 
+  257  kubectl create deploy my-app --image nginx:1.23.4-alpine 
+  258  kubectl get pod -o wide
+  259  kubectl expose deploy/my-app --type clusterip --port 80 --name my-app 
+  260  kubectl expose deploy/my-app --type ClusterIP --port 80 --name my-app 
+  261  kubectl create deploy --type ClusterIP --port 80 --name my-app02 --dry-run=client -o yaml> svc.yaml
+  262  kubectl scale --replicas=2 deploy/my-app
+  263  kubectl get all
+  264  kubectl create pod --image busybox --name my-app-02 --dry-run=client -o yaml > pod123.yaml
+  265  kubectl create pod --image=busybox --name my-app-02 --dry-run=client -o yaml > pod123.yaml
+  266  kubectl run pod --image busybox --name my-app-02 --dry-run=client -o yaml > pod123.yaml
+  267  kubectl run my-app-02 --image busybox --dry-run=client -o yaml > pod123.yaml
+  268  ls
+  269  vi pod123.yaml 
+  270  kubectl apply -f pod123.yaml 
+  271  kubectl get pods -A
+  272  kubectl describe pod my-app-02
+  273  kubectl get pods -A
+  274  kubectl get pods -A -o wide
+  275  kubectl get pods -o wide
+  276  kubectl get all -o wide
+  277  kubectl delete deploy my-app
+  278  kubectl delete svc my-app
+  279  kubectl delete pod my-app-02
+  280  kubectl get all -o wide
+  281  vi podtest.yaml
+  282  kubectl apply -f podtest.yaml 
+  283  kubectl get pods
+  284  kubectl run nginx-pod --image nginx:latest --port 80
+  285  kubectl run redis-pod --image redislatest --port 80
+  286  kubectl get pods
+  287  kubectl delete redis-pod
+  288  kubectl delete pod redis-pod
+  289  kubectl run redis-pod --image redis:latest --port 80
+  290  kubectl get pods
+  291  kubectl expose nginx-pod --name my-service --port 80
+  292  kubectl expose pod/nginx-pod --name my-service --port 80
+  293  kubectl get pods
+  294  kubectl expose pod/redis-pod --name my-db --port 80
+  295  kubectl get pods
+  296  kubectl describe pod my-pod
+  297  kubectl get pods
+  298  kubectl logs -c init-mydb my-pod
+  299  kubectl get svc
+  300  kubectl delete svc my-db
+  301  kubectl get pods
+  302  kubectl expose pod/redis-pod --name my-db-service --port 80
+  303  kubectl get pods
+  304  vi ds.yaml
+  305  kubectl apply -f ds.yaml 
+  306  kubectl get ds
+  307  kubectl get pods
+  308  vi Cs.yaml
+  309  kubectl apply -f Cs.yaml 
+  310  kuebctl logs -f hello
+  311  kubectl logs -f hello
+  312  kubectl get cs
+  313  kubectl get cronjob
+  314  kubectl log -c hello hello
+  315  kubectl logs -c hello hello
+  316  kubectl logs -c hello 
+  317  kubectl get pods --selector=job-name=hello
+  318  kubectl logs hello
+  319  kubectl config get-contexts
+  320  kubectl get pods 
+  321  kubectl get pod
+  322  kubectl get nodes
+  323  kubectl taint nodes cluster-cka-2-worker gpu=true:NoSchedule
+  324  kubectl describe node cluster-cka-2-worker | grep -i Taint
+  325  kubectl taint nodes cluster-cka-2-worker2 gpu=false:NoSchedule
+  326  kubectl config get-contexts
+  327  kubectl get nodes
+  328  kubectl taint nodes cluster-cka-2-worker gpu=true:NoSchedule-
+  329  kubectl taint nodes cluster-cka-2-worker2 gpu=false:NoSchedule-
+  330  kubectl taint nodes cluster-cka-2-worker gpu=true:NoSchedule
+  331  kubectl taint nodes cluster-cka-2-worker2 gpu=false:NoSchedule
+  332  kubectl run nginx-pod --image nginx:latest --dry-run=client -o yaml > nginx.yaml
+  333  kubectl apply -f nginx.yaml 
+  334  kubectl get pods
+  335  kubectl describe pod nginx-pod
+  336  vi nginx.yaml 
+  337  kubectl delete pod nginx-pod
+  338  kubectl apply -f nginx.yaml 
+  339  kubectl get pods
+  340  kubectl get nodes -A
+  341  kubectl describe nodes cluster-cka-2-control-plane | grep -i Taints
+  342  kubectl taint nodes cluster-cka-2-control-plane node-role.kubernetes.io/control-plane:NoSchedule- 
+  343  kubectl run redis-pod --image redis:latest
+  344  kubectl get pods
+  345  kubectl get pods -o wide
+  346  kubectl taint nodes cluster-cka-2-control-plane node-role.kubernetes.io/control-plane:NoSchedule
+  347  kubectl get pods -o wide
+  348  kubectl delete pods nginx-pod redis-pod
+  349  kubectl get nodes
+  350  kubectl taint nodes cluster-cka-2-worker gpu=true:NoSchedule-
+  351  kubectl taint nodes cluster-cka-2-worker2 gpu=false:NoSchedule-
+  352  kubectl get pods
+  353  ls -ltr
+  354  mv nginx.yaml toleration.yaml
+  355  ls -ltr
+  356  kubectl run nginx-pod --image nginx:latest --dry-run=client -o yaml > nodeaffenity.yaml
+  357  ls -ltr nodeaffenity.yaml 
+  358  ls -ltri nodeaffenity.yaml 
+  359  vi nodeaffenity.yaml 
+  360  kubectl apply -f nodeaffenity.yaml 
+  361  vi nodeaffenity.yaml 
+  362  kubectl apply -f nodeaffenity.yaml 
+  363  kubectl get pods
+  364  kubectl describe pod nginx-pod
+  365  kubectl get nodes
+  366  kubectl label nodes cluster-cka-2-worker disktype=ssd
+  367  kubectl get pods
+  368  kubectl edit pod nginx-pod
+  369  kubectl get pods
+  370  kubectl delete pod nginx-pod
+  371  vi nodeaffenity.yaml 
+  372  kubectl apply -f nodeaffenity.yaml 
+  373  kubectl get pods
+  374  kubectl get nodes
+  375  kubectl taint nodes cluster-cka-2-worker2 gpu=false:NoSchedule
+  376  kubectl run redis-pod --image redis:latest --dry-run=client -o ymal > nodeaffinity2.yaml
+  377  kubectl run redis-pod --image redis:latest --dry-run=client -o yaml > nodeaffinity2.yaml
+  378  vi nodeaffinity2.yaml 
+  379  kubectl apply -f nodeaffinity2.yaml 
+  380  vi nodeaffinity2.yaml 
+  381  kubectl apply -f nodeaffinity2.yaml 
+  382  kubectl get pods
+  383  kubectl get pods -o wide
+  384  kubectl label nodes cluster-cka-2-worker2 disktype=ssd
+  385  kubectl run redis-pod-1 --image redis:latest --dry-run=client -o yaml > tandtandnodeaff.yaml
+  386  vi tandtandnodeaff.yaml 
+  387  kubectl describe nodes cluster-cka-2-worker2|grep -i taints
+  388  vi tandtandnodeaff.yaml 
+  389  kubectl apply -f tandtandnodeaff.yaml 
+  390  vi tandtandnodeaff.yaml 
+  391  kubectl apply -f tandtandnodeaff.yaml 
+  392  vi tandtandnodeaff.yaml 
+  393  kubectl apply -f tandtandnodeaff.yaml 
+  394  vi tandtandnodeaff.yaml 
+  395  kubectl apply -f tandtandnodeaff.yaml 
+  396  kubectl get pods -o wide
+  397  kubectl delete pods nginx-pod redis-pod redis-pods
+  398  kubectl delete pods  redis-pod-1
+  399  kubectl get pods -o wide
+  400  kubectl get nodes
+  401  kubectl config get-contexts
+  402  kubectl get pods
+  403  kubectl get nodes
+  404  ls
+  405  ls -ltr
+  406  exit
+  407  kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://php-apache; done"
+  408  vi metrics-server.yaml
+  409  kubectl apply -f metrics-server.yaml 
+  410  kubectl get pods -A -n kubesystem
+  411  kubectl create ns mem-example
+  412  kubectl get ns
+  413  vi mem-1.yaml
+  414  kubectl apply -f mem-1.yaml -n mem-example
+  415  kubectl get pods -A -n mem-example
+  416  kubectl get pods -n mem-example
+  417  kubectl top pod memory-demo -n mem-example
+  418  vi mem-2.yaml
+  419  kubectl apply -f mem-2.yaml -n mem-example
+  420  kubectl get pods -n mem-example
+  421  kubectl describe pod memory-demo-2 -n mem-example
+  422  kubectl get pods -n mem-example
+  423  kubectl describe pod memory-demo-2 -n mem-example
+  424  kubectl get pods -n mem-example
+  425  kubectl top pod memory-demo-2 -n mem-example
+  426  kubectl get pods -n mem-example
+  427  vi mem-3.yaml
+  428  kubectl apply -f mem-3.yaml -n mem-example
+  429  kubectl get pods -n mem-example
+  430  kubectl describe pod memory-demo-3 -n mem-example
+  431  kubectl get pods -n mem-example
+  432  kuebctl delete pod memory-demo -n mem-example
+  433  kubectl delete pod memory-demo -n mem-example
+  434  kubectl delete pod memory-demo-2 -n mem-example
+  435  kubectl delete pod memory-demo-3 -n mem-example
+  436  kubectl get pods -A
+  437  kubectl top pod metrics-server-67fc4df55-llstj -n kubesystem
+  438  kubectl get pods -A
+  439  kubectl top pod metrics-server-67fc4df55-llstj
+  440  vi Deploy.yaml
+  441  vi hpa.yaml
+  442  kubectl apply -f Deploy.yaml 
+  443  kuebctl apply -f hpa.yaml 
+  444  kubectl apply -f hpa.yaml 
+  445  kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10
+  446  kuebctl get pods
+  447  kuebctl get pods -A
+  448  kubectl get pods
+  449  kubectl get pods -A
+  450  kubectl delete pod php-apache
+  451  kubectl autoscale deployment php-apache-2 --cpu-percent=50 --min=1 --max=10
+  452  kuebctl get deployments
+  453  kubectl get deployments
+  454  kubectl delete deploy php-apache
+  455  kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10
+  456  kubectl get hpa
+  457  kubectl delete hpa php-apache
+  458  kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10
+  459  kubectl get deployments
+  460  kubectl apply -f Deploy.yaml 
+  461  kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10
+  462  kubectl get hpa php-apache --watch
+  463  kubectl get hpa php-apache 
+  464  kubectl get pods
+  465  kubectl get hpa php-apache 
+  466  kubectl get pods
+  467  kubectl get hpa php-apache 
+  468  kubectl get pods
+  469  kubectl get hpa php-apache 
+  470  kubectl delete deploy php-apache
+  471  kubectl get pods
+  472  exit
+  473  kubectl config get-contexts
+  474  kubectl config use-contexts kind-cluster-cka-1
+  475  kubectl config use-context kind-cluster-cka-1
+  476  kubectl config use-context kind-cluster-cka-2
+  477  kubectl get pods
+  478  kubectl get nodes
+  479  kubectl get nodes cluster-cka-2-worker --show-labels
+  480  kubectl get nodes cluster-cka-2-worker2 --show-labels
+  481  kubectl label nodes cluster-cka-2-worker disktype=ssd-
+  482  kubectl label nodes cluster-cka-2-worker disktype-
+  483  kubectl label nodes cluster-cka-2-worker2 disktype-
+  484  kubectl describe node cluster-cka-2-worker | grep -i Taints
+  485  kubectl describe node cluster-cka-2-worker2 | grep -i Taints
+  486  kubectl taint node cluster-cka-2-worker2 gpu=false:NoSchedule-
+  487  kubectl get nodes
+  488  vi liveness-readiness.yaml
+  489  cat liveness-readiness.yaml 
+  490  kubectl run mypod01 --image registry.k8s.io/busybox --dry-run=client -o yaml > busybox.yaml
+  491  vi busybox.yaml 
+  492  kubectl config get-context
+  493  kubectl config get-contexts
+  494  openssl genrsa -out learner.key 2048
+  495  ls
+  496  openssl req -new -key learner.key -out learner.csr -subj "/CN=learner"
+  497  ls -ltr | grep -i learner
+  498  cat learner.csr 
+  499  vi learner-certificatesignrequest.yaml
+  500  cat learner.csr | base64| tr -d "/n"
+  501  vi learner-certificatesignrequest.yaml
+  502  kubectl apply -f learner-certificatesignrequest.yaml 
+  503  kubectl get csr
+  504  kubectl describe csr learner
+  505  kubectl csr approve learner
+  506  kubectl certificate approve learner
+  507  kubectl describe csr learner
+  508  kubectl get csr learner -o yaml > learner.yaml
+  509  cat learner.
+  510  cat learner.yaml 
+  511  LS0tLS1CRUdJTiBDRVJUSUZJQ0FURSBSRVFVRVNULS0tLS0KTUlJQ1ZqQ0NBVDRDQVFBd0VURVBNQTBHQTFVRUF3d0dZVzVuWld4aE1JSUJJakFOQmdrcWhraUc5dzBCQVFFRgpBQU9DQVE4QU1JSUJDZ0tDQVFFQTByczhJTHRHdTYxakx2dHhWTTJSVlRWMDNHWlJTWWw0dWluVWo4RElaWjBOCnR2MUZtRVFSd3VoaUZsOFEzcWl0Qm0wMUFSMkNJVXBGd2ZzSjZ4MXF3ckJzVkhZbGlBNVhwRVpZM3ExcGswSDQKM3Z3aGJlK1o2MVNrVHF5SVBYUUwrTWM5T1Nsbm0xb0R2N0NtSkZNMUlMRVI3QTVGZnZKOEdFRjJ6dHBoaUlFMwpub1dtdHNZb3JuT2wzc2lHQ2ZGZzR4Zmd4eW8ybmlneFNVekl1bXNnVm9PM2ttT0x1RVF6cXpkakJ3TFJXbWlECklmMXBMWnoyalVnald4UkhCM1gyWnVVV1d1T09PZnpXM01LaE8ybHEvZi9DdS8wYk83c0x0MCt3U2ZMSU91TFcKcW90blZtRmxMMytqTy82WDNDKzBERHk5aUtwbXJjVDBnWGZLemE1dHJRSURBUUFCb0FBd0RRWUpLb1pJaHZjTgpBUUVMQlFBRGdnRUJBR05WdmVIOGR4ZzNvK21VeVRkbmFjVmQ1N24zSkExdnZEU1JWREkyQTZ1eXN3ZFp1L1BVCkkwZXpZWFV0RVNnSk1IRmQycVVNMjNuNVJsSXJ3R0xuUXFISUh5VStWWHhsdnZsRnpNOVpEWllSTmU3QlJvYXgKQVlEdUI5STZXT3FYbkFvczFqRmxNUG5NbFpqdU5kSGxpT1BjTU1oNndLaTZzZFhpVStHYTJ2RUVLY01jSVUyRgpvU2djUWdMYTk0aEpacGk3ZnNMdm1OQUxoT045UHdNMGM1dVJVejV4T0dGMUtCbWRSeEgvbUNOS2JKYjFRQm1HCkkwYitEUEdaTktXTU0xMzhIQXdoV0tkNjVoVHdYOWl4V3ZHMkh4TG1WQzg0L1BHT0tWQW9FNkpsYWFHdTlQVmkKdjlOSjVaZlZrcXdCd0hKbzZXdk9xVlA3SVFjZmg3d0drWm89Ci0tLS0tRU5EIENFUlRJRklDQVRFIFJFUVVFU1QtLS0tLQo=| base64 -d
+  512  echo "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURSBSRVFVRVNULS0tLS0KTUlJQ1ZqQ0NBVDRDQVFBd0VURVBNQTBHQTFVRUF3d0dZVzVuWld4aE1JSUJJakFOQmdrcWhraUc5dzBCQVFFRgpBQU9DQVE4QU1JSUJDZ0tDQVFFQTByczhJTHRHdTYxakx2dHhWTTJSVlRWMDNHWlJTWWw0dWluVWo4RElaWjBOCnR2MUZtRVFSd3VoaUZsOFEzcWl0Qm0wMUFSMkNJVXBGd2ZzSjZ4MXF3ckJzVkhZbGlBNVhwRVpZM3ExcGswSDQKM3Z3aGJlK1o2MVNrVHF5SVBYUUwrTWM5T1Nsbm0xb0R2N0NtSkZNMUlMRVI3QTVGZnZKOEdFRjJ6dHBoaUlFMwpub1dtdHNZb3JuT2wzc2lHQ2ZGZzR4Zmd4eW8ybmlneFNVekl1bXNnVm9PM2ttT0x1RVF6cXpkakJ3TFJXbWlECklmMXBMWnoyalVnald4UkhCM1gyWnVVV1d1T09PZnpXM01LaE8ybHEvZi9DdS8wYk83c0x0MCt3U2ZMSU91TFcKcW90blZtRmxMMytqTy82WDNDKzBERHk5aUtwbXJjVDBnWGZLemE1dHJRSURBUUFCb0FBd0RRWUpLb1pJaHZjTgpBUUVMQlFBRGdnRUJBR05WdmVIOGR4ZzNvK21VeVRkbmFjVmQ1N24zSkExdnZEU1JWREkyQTZ1eXN3ZFp1L1BVCkkwZXpZWFV0RVNnSk1IRmQycVVNMjNuNVJsSXJ3R0xuUXFISUh5VStWWHhsdnZsRnpNOVpEWllSTmU3QlJvYXgKQVlEdUI5STZXT3FYbkFvczFqRmxNUG5NbFpqdU5kSGxpT1BjTU1oNndLaTZzZFhpVStHYTJ2RUVLY01jSVUyRgpvU2djUWdMYTk0aEpacGk3ZnNMdm1OQUxoT045UHdNMGM1dVJVejV4T0dGMUtCbWRSeEgvbUNOS2JKYjFRQm1HCkkwYitEUEdaTktXTU0xMzhIQXdoV0tkNjVoVHdYOWl4V3ZHMkh4TG1WQzg0L1BHT0tWQW9FNkpsYWFHdTlQVmkKdjlOSjVaZlZrcXdCd0hKbzZXdk9xVlA3SVFjZmg3d0drWm89Ci0tLS0tRU5EIENFUlRJRklDQVRFIFJFUVVFU1QtLS0tLQo="|base64 -d
+  513  openssl genrsa -out dd.key 2048
+  514  openssl genrsa -out kk.key 2048
+  515  openssl genrsa -out gg.key 2048
+  516  opensll genrsa -out hh.key 2048
+  517  openssl genrsa -out jj.key 2048
+  518  ls -ltr | grep -i key
+  519  rm -rf *.key
+  520  ls -ltr
+  521  openssl genrsa -out learner22.key 2048
+  522  openssl req -new -key learner22.key -out learner22.csr -subj "/CN=learner22"
+  523  cat learner22.csr | base64| tr -d "\n"
+  524  ls
+  525  vi learner-certificatesignrequest.yaml 
+  526  kubectl apply -f learner-certificatesignrequest.yaml 
+  527  kubectl get csr
+  528  vi learner-certificatesignrequest.yaml 
+  529  kubectl apply -f learner-certificatesignrequest.yaml 
+  530  kubectl get csr
+  531  kubectl certificate approve learner22
+  532  kubectl configs get-context
+  533  kubectl config get-contexts
+  534  ls -ltr
+  535  rm -rf learner*
+  536  ls -ltr
+  537  openssl genrsa -out dd.key 2048
+  538  openssl req -new -key dd.key -out dd.csr -subj "/CN=dd"
+  539  ls -ltr
+  540  vi ddcertificatsigninrequest.yaml
+  541  cat dd.csr
+  542  cat dd.csr | base64| tr -d "\n"
+  543  vi ddcertificatsigninrequest.yaml
+  544  kubectl apply -f ddcertificatsigninrequest.yaml 
+  545  kubectl get csr
+  546  kubectl delete csr learner learner22
+  547  kubectl approve certificate dd
+  548  kubectl certificate approve dd
+  549  ls
+  550  kubectl get csr dd -o yaml > dd.yaml
+  551  cat dd.yaml
+  552  echo "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM4ekNDQWR1Z0F3SUJBZ0lSQUozQnovaG5tTzVBNHR4ZGRLUENYVDh3RFFZSktvWklodmNOQVFFTEJRQXcKRlRFVE1CRUdBMVVFQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TkRBNU1EUXhNekF5TWpoYUZ3MHlOREV5TVRNeApNekF5TWpoYU1BMHhDekFKQmdOVkJBTVRBbVJrTUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCCkNnS0NBUUVBaWVkcStUZDNUZFhaa2c0aUN1b3RYZXp1blBaYjREMFl4N2hIcTBZR0w2UlNpMDAyUXVDQThKRlQKS1A1b0VLY1ZnS2dUdUFETUtyL1JUR0F4OENUU0c2M2QyUzBHOUhuSDdBcDFOeGQ0Z2tyc1laUXVINi9teGdpQgpHQUUvWDFyZHp1aUZzL2JwNHJmcHN5ZTZMVEVCM0VsL2cwc1J2Y1IvNjVPNGVkZmQ0dXFSVkRlTmY1WFhHdjJsCjZzZ2NkYitwajRIaE52YkNlU1U3dkhjVnRPWjRKcUw5WnJhWVJXQnNtNWJrN0lTZ1dkRGxqMlEwSHJ1eHF1MVoKa0ZoZDhoNys4amRoUlVvRnYxUUFIdTBVVCtRc2RpUWRwQ3IyeXhJNkdUaU5xY2lkWkJRalhvaGYzRTBMa05XVQpiWm5Yci9ZczdnZVdLdUJvZDUrZUdVN1lGay8rWlFJREFRQUJvMFl3UkRBVEJnTlZIU1VFRERBS0JnZ3JCZ0VGCkJRY0RBakFNQmdOVkhSTUJBZjhFQWpBQU1COEdBMVVkSXdRWU1CYUFGSVR2SmJBYmRoc1FkSWx2Z2xleTE3d1UKLzUxQU1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQnJoWjcxUXQzTWZ4VEZMU3hNYnprWUN1ODh1eFU1ZmJrRwp6UldudXcxY0IwT0hLTWJ1eTRBRENrRVVpcHM4T09rbW1tZGswd2U3SkJsQXdWQUovMmFsQTVOQ0RNNVpUZFk5Cm4zaG15RWhSb25VbStHbVNjZmpMSm9KNGZNbzFldlVDd2lDSTR3V0NTNFRRWDJPR1o0ZTYrVVFwSG9lM2pmMnQKMGFaNTNNMDdZN0Rvblp0dVltOVJnVjFqSXBoZVBzZldOMFlQVXRkMjQzUFJ5c2FKL3pUUEk3Nkd3MXlvTGtzNAp0MzlMWGNJN0R3QnZiUDZVQUUybHJNaDhtRW5FeFNjSkxoTFM3TW5UOGtPdkVqQnhIVEpmeEFVOGM4MlJmZFdkCmhVa0VLQ08zeXEvYTJ1QnZDbExVdHk5bzN2ditmdzVxUjIweDc4REJscFlrMWJDRVpXbFgKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=" | base64 -d "\n"
+  553  echo "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM4ekNDQWR1Z0F3SUJBZ0lSQUozQnovaG5tTzVBNHR4ZGRLUENYVDh3RFFZSktvWklodmNOQVFFTEJRQXcKRlRFVE1CRUdBMVVFQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TkRBNU1EUXhNekF5TWpoYUZ3MHlOREV5TVRNeApNekF5TWpoYU1BMHhDekFKQmdOVkJBTVRBbVJrTUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCCkNnS0NBUUVBaWVkcStUZDNUZFhaa2c0aUN1b3RYZXp1blBaYjREMFl4N2hIcTBZR0w2UlNpMDAyUXVDQThKRlQKS1A1b0VLY1ZnS2dUdUFETUtyL1JUR0F4OENUU0c2M2QyUzBHOUhuSDdBcDFOeGQ0Z2tyc1laUXVINi9teGdpQgpHQUUvWDFyZHp1aUZzL2JwNHJmcHN5ZTZMVEVCM0VsL2cwc1J2Y1IvNjVPNGVkZmQ0dXFSVkRlTmY1WFhHdjJsCjZzZ2NkYitwajRIaE52YkNlU1U3dkhjVnRPWjRKcUw5WnJhWVJXQnNtNWJrN0lTZ1dkRGxqMlEwSHJ1eHF1MVoKa0ZoZDhoNys4amRoUlVvRnYxUUFIdTBVVCtRc2RpUWRwQ3IyeXhJNkdUaU5xY2lkWkJRalhvaGYzRTBMa05XVQpiWm5Yci9ZczdnZVdLdUJvZDUrZUdVN1lGay8rWlFJREFRQUJvMFl3UkRBVEJnTlZIU1VFRERBS0JnZ3JCZ0VGCkJRY0RBakFNQmdOVkhSTUJBZjhFQWpBQU1COEdBMVVkSXdRWU1CYUFGSVR2SmJBYmRoc1FkSWx2Z2xleTE3d1UKLzUxQU1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQnJoWjcxUXQzTWZ4VEZMU3hNYnprWUN1ODh1eFU1ZmJrRwp6UldudXcxY0IwT0hLTWJ1eTRBRENrRVVpcHM4T09rbW1tZGswd2U3SkJsQXdWQUovMmFsQTVOQ0RNNVpUZFk5Cm4zaG15RWhSb25VbStHbVNjZmpMSm9KNGZNbzFldlVDd2lDSTR3V0NTNFRRWDJPR1o0ZTYrVVFwSG9lM2pmMnQKMGFaNTNNMDdZN0Rvblp0dVltOVJnVjFqSXBoZVBzZldOMFlQVXRkMjQzUFJ5c2FKL3pUUEk3Nkd3MXlvTGtzNAp0MzlMWGNJN0R3QnZiUDZVQUUybHJNaDhtRW5FeFNjSkxoTFM3TW5UOGtPdkVqQnhIVEpmeEFVOGM4MlJmZFdkCmhVa0VLQ08zeXEvYTJ1QnZDbExVdHk5bzN2ditmdzVxUjIweDc4REJscFlrMWJDRVpXbFgKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=" | base64 -d |tr -d "\n"
+  554  echo "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM4ekNDQWR1Z0F3SUJBZ0lSQUozQnovaG5tTzVBNHR4ZGRLUENYVDh3RFFZSktvWklodmNOQVFFTEJRQXcKRlRFVE1CRUdBMVVFQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TkRBNU1EUXhNekF5TWpoYUZ3MHlOREV5TVRNeApNekF5TWpoYU1BMHhDekFKQmdOVkJBTVRBbVJrTUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCCkNnS0NBUUVBaWVkcStUZDNUZFhaa2c0aUN1b3RYZXp1blBaYjREMFl4N2hIcTBZR0w2UlNpMDAyUXVDQThKRlQKS1A1b0VLY1ZnS2dUdUFETUtyL1JUR0F4OENUU0c2M2QyUzBHOUhuSDdBcDFOeGQ0Z2tyc1laUXVINi9teGdpQgpHQUUvWDFyZHp1aUZzL2JwNHJmcHN5ZTZMVEVCM0VsL2cwc1J2Y1IvNjVPNGVkZmQ0dXFSVkRlTmY1WFhHdjJsCjZzZ2NkYitwajRIaE52YkNlU1U3dkhjVnRPWjRKcUw5WnJhWVJXQnNtNWJrN0lTZ1dkRGxqMlEwSHJ1eHF1MVoKa0ZoZDhoNys4amRoUlVvRnYxUUFIdTBVVCtRc2RpUWRwQ3IyeXhJNkdUaU5xY2lkWkJRalhvaGYzRTBMa05XVQpiWm5Yci9ZczdnZVdLdUJvZDUrZUdVN1lGay8rWlFJREFRQUJvMFl3UkRBVEJnTlZIU1VFRERBS0JnZ3JCZ0VGCkJRY0RBakFNQmdOVkhSTUJBZjhFQWpBQU1COEdBMVVkSXdRWU1CYUFGSVR2SmJBYmRoc1FkSWx2Z2xleTE3d1UKLzUxQU1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQnJoWjcxUXQzTWZ4VEZMU3hNYnprWUN1ODh1eFU1ZmJrRwp6UldudXcxY0IwT0hLTWJ1eTRBRENrRVVpcHM4T09rbW1tZGswd2U3SkJsQXdWQUovMmFsQTVOQ0RNNVpUZFk5Cm4zaG15RWhSb25VbStHbVNjZmpMSm9KNGZNbzFldlVDd2lDSTR3V0NTNFRRWDJPR1o0ZTYrVVFwSG9lM2pmMnQKMGFaNTNNMDdZN0Rvblp0dVltOVJnVjFqSXBoZVBzZldOMFlQVXRkMjQzUFJ5c2FKL3pUUEk3Nkd3MXlvTGtzNAp0MzlMWGNJN0R3QnZiUDZVQUUybHJNaDhtRW5FeFNjSkxoTFM3TW5UOGtPdkVqQnhIVEpmeEFVOGM4MlJmZFdkCmhVa0VLQ08zeXEvYTJ1QnZDbExVdHk5bzN2ditmdzVxUjIweDc4REJscFlrMWJDRVpXbFgKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=" | base64 -d |tr -d "\n" > dd.crt
+  555  ls -ltr | grep -i dd
+  556  openssl genrsa -out batman.key 2048
+  557  ls -ltr
+  558  openssl req -new -key batman.key -out batman.csr -subj "/CN=batman"
+  559  ls -ltr
+  560  batmancertificatesigingrequest.yaml
+  561  vi batmancertificatesigingrequest.yaml
+  562  kubectl apply -f batmancertificatesigingrequest.yaml 
+  563  kubectl get csr
+  564  kubectl get csr batman -o yaml > batman.yaml
+  565  cat batman.yaml 
+  566  ls -ltr
+  567  rm -rf batman.yaml
+  568  kubectl get csr
+  569  kubectl certificate approve batman
+  570  kubectl get csr
+  571  kubectl get csr batman -o yaml > batman.yaml
+  572  cat batman
+  573  cat batman.yaml 
+  574  echo "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM5akNDQWQ2Z0F3SUJBZ0lRYmpvekNPbTJ1bmFoVExNdkFSaDZMekFOQmdrcWhraUc5dzBCQVFzRkFEQVYKTVJNd0VRWURWUVFERXdwcmRXSmxjbTVsZEdWek1CNFhEVEkwTURrd05ERXpNVFEwTkZvWERUSTBNRGt4TkRFegpNVFEwTkZvd0VURVBNQTBHQTFVRUF4TUdZVzVuWld4aE1JSUJJakFOQmdrcWhraUc5dzBCQVFFRkFBT0NBUThBCk1JSUJDZ0tDQVFFQTByczhJTHRHdTYxakx2dHhWTTJSVlRWMDNHWlJTWWw0dWluVWo4RElaWjBOdHYxRm1FUVIKd3VoaUZsOFEzcWl0Qm0wMUFSMkNJVXBGd2ZzSjZ4MXF3ckJzVkhZbGlBNVhwRVpZM3ExcGswSDQzdndoYmUrWgo2MVNrVHF5SVBYUUwrTWM5T1Nsbm0xb0R2N0NtSkZNMUlMRVI3QTVGZnZKOEdFRjJ6dHBoaUlFM25vV210c1lvCnJuT2wzc2lHQ2ZGZzR4Zmd4eW8ybmlneFNVekl1bXNnVm9PM2ttT0x1RVF6cXpkakJ3TFJXbWlESWYxcExaejIKalVnald4UkhCM1gyWnVVV1d1T09PZnpXM01LaE8ybHEvZi9DdS8wYk83c0x0MCt3U2ZMSU91TFdxb3RuVm1GbApMMytqTy82WDNDKzBERHk5aUtwbXJjVDBnWGZLemE1dHJRSURBUUFCbzBZd1JEQVRCZ05WSFNVRUREQUtCZ2dyCkJnRUZCUWNEQWpBTUJnTlZIUk1CQWY4RUFqQUFNQjhHQTFVZEl3UVlNQmFBRklUdkpiQWJkaHNRZElsdmdsZXkKMTd3VS81MUFNQTBHQ1NxR1NJYjNEUUVCQ3dVQUE0SUJBUUNvRWF4NVNZSmt4MmRVM054dlFQWW5TSGZWZzdlLwpPSUI0cTFJQ21WVC9wdEZRZkJxMlZFb1V6T0krOG5qMUhZTVF2Ukx0Wm91REVqNCtjQUlPSkNWRElGck9MblQvCmhuUlkvUUNoSzQ0Ym1mcjNJL1NDdXFaeXFNcEhFa3ZBU3pzV2t2TEQ0QU12K0ZjWis5UXdEYVh6RkQ1UWpXWWwKcHI3dExBRUFDem5wK0tCZ25DbllqRTV3ZXcxZUVpYUhXb3lzVTE0VnNMMG02aUhPL3BKUUcyZC8wN1NDY0pKRgpEWnIweTNIQzJGb1BLK05sb2pyTGs0dVpTN2ZuUU9iRFdXcmVDd3U2cWkyKzJEL1RyNXdLb3hDRFJDc1lwMFl2CnNuOGhvTTBzOUpobUtoRk1oWVVCd252azBaOFNIeFJhR3dqbUlMMXZrbW84NDdQS2w1UTZxdkk1Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K"|base64 -d| tr -d "\n"
+  575  echo "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM5akNDQWQ2Z0F3SUJBZ0lRYmpvekNPbTJ1bmFoVExNdkFSaDZMekFOQmdrcWhraUc5dzBCQVFzRkFEQVYKTVJNd0VRWURWUVFERXdwcmRXSmxjbTVsZEdWek1CNFhEVEkwTURrd05ERXpNVFEwTkZvWERUSTBNRGt4TkRFegpNVFEwTkZvd0VURVBNQTBHQTFVRUF4TUdZVzVuWld4aE1JSUJJakFOQmdrcWhraUc5dzBCQVFFRkFBT0NBUThBCk1JSUJDZ0tDQVFFQTByczhJTHRHdTYxakx2dHhWTTJSVlRWMDNHWlJTWWw0dWluVWo4RElaWjBOdHYxRm1FUVIKd3VoaUZsOFEzcWl0Qm0wMUFSMkNJVXBGd2ZzSjZ4MXF3ckJzVkhZbGlBNVhwRVpZM3ExcGswSDQzdndoYmUrWgo2MVNrVHF5SVBYUUwrTWM5T1Nsbm0xb0R2N0NtSkZNMUlMRVI3QTVGZnZKOEdFRjJ6dHBoaUlFM25vV210c1lvCnJuT2wzc2lHQ2ZGZzR4Zmd4eW8ybmlneFNVekl1bXNnVm9PM2ttT0x1RVF6cXpkakJ3TFJXbWlESWYxcExaejIKalVnald4UkhCM1gyWnVVV1d1T09PZnpXM01LaE8ybHEvZi9DdS8wYk83c0x0MCt3U2ZMSU91TFdxb3RuVm1GbApMMytqTy82WDNDKzBERHk5aUtwbXJjVDBnWGZLemE1dHJRSURBUUFCbzBZd1JEQVRCZ05WSFNVRUREQUtCZ2dyCkJnRUZCUWNEQWpBTUJnTlZIUk1CQWY4RUFqQUFNQjhHQTFVZEl3UVlNQmFBRklUdkpiQWJkaHNRZElsdmdsZXkKMTd3VS81MUFNQTBHQ1NxR1NJYjNEUUVCQ3dVQUE0SUJBUUNvRWF4NVNZSmt4MmRVM054dlFQWW5TSGZWZzdlLwpPSUI0cTFJQ21WVC9wdEZRZkJxMlZFb1V6T0krOG5qMUhZTVF2Ukx0Wm91REVqNCtjQUlPSkNWRElGck9MblQvCmhuUlkvUUNoSzQ0Ym1mcjNJL1NDdXFaeXFNcEhFa3ZBU3pzV2t2TEQ0QU12K0ZjWis5UXdEYVh6RkQ1UWpXWWwKcHI3dExBRUFDem5wK0tCZ25DbllqRTV3ZXcxZUVpYUhXb3lzVTE0VnNMMG02aUhPL3BKUUcyZC8wN1NDY0pKRgpEWnIweTNIQzJGb1BLK05sb2pyTGs0dVpTN2ZuUU9iRFdXcmVDd3U2cWkyKzJEL1RyNXdLb3hDRFJDc1lwMFl2CnNuOGhvTTBzOUpobUtoRk1oWVVCd252azBaOFNIeFJhR3dqbUlMMXZrbW84NDdQS2w1UTZxdkk1Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K"|base64 -d| tr -d "\n" > batman.crt
+  576  kubectl get pods --kubeconfig config
+  577  kubectl config get-contexts
+  578  kubectl get pods --kubeconfig config kind-cluster-cka-2
+  579  kubectl get pods --kubeconfig
+  580  kubectl get pods --kubeconfig $HOME/.kube/config
+  581  kubectl get --raw /api/v1/namespaces/default/pods   --server https://localhost:64418   --client-key dd.key   --client-certificate dd.crt   --certificate-authority ca.crt
+  582  docker ps
+  583  docker exec -it 4d234df284a0 bash
+  584  kubectl auth whoami
+  585  kubectl auth -cani get pods
+  586  kubectl auth -cani get pod
+  587  kubectl auth can-i get pods
+  588  kubectl auth can-i get pods --as dd
+  589  kubectl auth can-i get pods --as batman
+  590  kubectl auth whoami
+  591  kubectl auth can-i get pods --as dd
+  592  vi role.yaml
+  593  kubectl apply -f role.yaml 
+  594  kubectl get role
+  595  cat role.yaml 
+  596  kubectl create role node-reader --verb=get --verb=watch --verb=list --resource=nodes
+  597  kubectl get roles
+  598  vi podrolebinding.yaml
+  599  kubectl apply -f podrolebinding.yaml 
+  600  kubectl get rolebindings
+  601  vi noderolebind.yaml
+  602  kubectl apply -f noderolebind.yaml 
+  603  kubectl configs get-contexts
+  604  kubectl config get-contexts
+  605  kubectl config set-credentials dd --client-key=dd.key --client-certificate=dd.crt --embed-certs=true
+  606  kubectl config set-context dd --cluster=kind-cluster-cka-2 --user=dd
+  607  kubectl config get-contexts
+  608  kubectl config use-context dd
+  609  kubectl config get-contexts
+  610  kubectl auth whoami
+  611  kubectl get pods
+  612  kubectl config get-contexts
+  613  kubectl get pods
+  614  kubectl get nodes
+  615  rm -rf dd.crt
+  616  kubectl config use-contexts kind-cluster-cka-2
+  617  kubectl config use-context kind-cluster-cka-2
+  618  kubectl get pods
+  619  ls
+  620  kubectl get csr dd -o jsonpath='{.status.certificate}'| base64 -d > dd.crt
+  621  kubectl config set-credentials dd --client-key=dd.key --client-certificate=dd.crt --embed-certs=true
+  622  kubectl config set-context dd --cluster=kind-cluster-cka-2 --user=dd
+  623  kubectl get pods
+  624  kubectl config use-context kind-cluster-cka-2
+  625  rm -rf batman.crt
+  626  kubectl get csr batman -o jsonpath='{.status.certificate}'|base64 -d > batman.crt
+  627  kubectl config set-credentials batman --client-key=batman.key --client-certificate=batman.crt --embed-certs=true
+  628  kubectl config get-contexts
+  629  kubectl config set-context batman --cluster=kind-cluster-cka-2 --user=batman
+  630  kubectl config get-contexts
+  631  kubectl config use-context batman
+  632  kubectl get nodes
+  633  kubectl config get-contexts
+  634  ls
+  635  openssl rsa -noout -modulus -in batman.key | openssl md5
+  636  openssl rsa -noout -modulus -in batman.crt | openssl md5
+  637  openssl req -new -key batman.key -out batman1.csr -subj "/CN=batman"
+  638  kubectl get csr
+  639  kubectl config use-context kind-cluster-cka-2
+  640  kubectl get csr
+  641  kubectl delete csr batman
+  642  cat batman1.csr | base64| tr -d "\n"
+  643  ls -ltr
+  644  vi batmancertificatesigingrequest.yaml 
+  645  kubectl apply -f batmancertificatesigingrequest.yaml 
+  646  kubectl get csr
+  647  kubectl get csr batman -o jsonpath='{.status.certificate}'|base64 -d > batman.crt
+  648  openssl rsa -noout -modulus -in batman.key | openssl md5
+  649  openssl rsa -noout -modulus -in batman.crt | openssl md5
+  650  openssl rsa -noout -modulus -in dd.crt | openssl md5
+  651  openssl rsa -noout -modulus -in dd.key | openssl md5
+  652  kubectl config set-credentials batman --client-key=batman.key --client-certificate=batman.crt --embed-certs=true
+  653  kubectl config use-context batman
+  654  kubectl config get-contexts
+  655  kubectl get nodes
+  656  kubectl get pods
+  657  kubectl config use-context batman
+  658  kubectl config set-context batman --cluster=kind-cluster-cka-2 --user=batman
+  659  kubectl config use-context batman
+  660  kubectl get nodes
+  661  kubectl config get-context
+  662  kubectl config get-contexts
+  663  kubectl config use-contexts kind-cluster-cka-2
+  664  kubectl config use-context kind-cluster-cka-2
+  665  kubectl get pods
+  666  kubectl get nodes
+  667  uptime
+  668  kubectl get csr
+  669  kubectl approve certificate batman
+  670  kubectl certificate approve batman
+  671  kubectl get csr
+  672  kubectl config get-context
+  673  kubectl config get-contexts
+  674  kubectl api-resources name-spaced=false
+  675  kubectl api-resources --name-spaced=false
+  676  kubectl api-resources --namespaced=false
+  677  kubectl api-resources --namespaced=true
+  678  kubectl create clusterrole nodes-reader --verb=get,list,watch --resources=nodes
+  679  kubectl create clusterrole nodes-reader --verb=get,list,watch --resource=nodes
+  680  kubectl create clusterrolebinding nodes-reader-binding --clusterrole=nodes-reader --user=dd
+  681  kubectl config get-contexts
+  682  kubectl auth can-i get nodes --as dd
+  683  kubectl config use-context kind-cluster-cka-2 --user=dd
+  684  kubectl get nodes
+  685  kubectl describe node cluster-cka-2-control-plane
+  686  kubectl config get-contexts
+  687  kubectl config use-context kind-cluster-cka-2
+  688  kubectl config get-contexts
+  689  kubectl create clusterrole batman-read-it --verb=get,list,watch --resources=nodes
+  690  kubectl create clusterrole batman-read-it --verb=get,list,watch --resources=node
+  691  kubectl create clusterrole batman-read-it --verb=get,list,watch --resource=node
+  692  kubectl create clusterrolebinding batman-read-it --clusterrole=batman-read-it --cluster=kind-cluster-cka-2 --user=batman
+  693  kubectl config get-contexts
+  694  kubectl auth can-i get nodes --as batman
+  695  kubectl config use-contexts kind-cluster-cka-2 --user=batman
+  696  kubectl config use-context kind-cluster-cka-2 --user=batman
+  697  kubectl auth whoami
+  698  kubectl get nodes
+  699  kubectl get nodes --as batman
+  700  kubectl get nodes --as dd
+  701  kubectl get nodes --as ram
+  702  kubectl create sa build-sa
+  703  secretapi.yaml
+  704  vi secretapi.yaml
+  705  kubectl apply -f secretapi.yaml 
+  706  kubectl get secret
+  707  kubectl get secret -A
+  708  kubectl get secret
+  709  kubectl get secret 
+  710  kubectl get sa
+  711  kubectl get secret 
+  712  kubectl apply -f secretapi.yaml 
+  713  kubectl get secret 
+  714  kubectl configs get-context
+  715  kubectl config get-context
+  716  kubectl config get-contexts
+  717  kubectl get secret 
+  718  cat secretapi.yaml 
+  719  kubectl describe secrets/build-robot-secret
+  720  kubectl create token build-robot
+  721  kubectl create sa build-robot
+  722  kubectl get sa
+  723  kubectl create token build-robot
+  724  kubectl apply -f secretapi.yaml 
+  725  kubectl get secret
+  726  kubectl create role mysvcrole --verb=get,list,watch --resource=pod
+  727  kubectl create rb  --role=mysvcrole --user=build-robot-secret
+  728  kubectl create rolebinding rb  --role=mysvcrole --user=build-robot-secret
+  729  kubectl auth can-i get pods --as user=build-robot
+  730  kubectl create rolebinding rb  --role=mysvcrole --user=build-robot
+  731  kubectl delete rolebinding rb
+  732  kubectl create rolebinding rb  --role=mysvcrole --user=build-robot
+  733  kubectl auth can-i get pods --as user=build-robot
+  734  kubectl get sa
+  735  kubectl auth can-i get pods --as build-robot
+  736  kubectl get pods --as build-robot
+  737  ls -ltr
+  738  kubectl config get-cluster
+  739  kubectl config get-contexts
+  740  kind delete cluster kind-cluster-cka-2
+  741  kind delete cluster --name kind-cluster-cka-2
+  742  kubectl config get-contexts
+  743  history
+  744  kubectl config get-contexts
+  745  kubectl config delete-cluster  kind-cluster-cka-2 
+  746  kubectl config get-contexts
+  747  kubectl config use-context  kind-cluster-cka-1
+  748  kubectl config delete-cluster  kind-cluster-cka-2 
+  749  kubectl config get-contexts
+  750  kubectl config delete-context  kind-cluster-cka-2 
+  751  kubectl config get-contexts
+  752  kubectl config delete-context  kind-cluster-cka-2  --user=dd
+  753  kubectl config delete-context  dd
+  754  kubectl config delete-context  batman
+  755  vi kind-cluster-new.yaml
+  756  history
+  757  ls
+  758  ind create cluster --image=kindest/node:v1.29.8@sha256:d46b7aa29567e93b27f7531d258c372e829d7224b25e3fc6ffdefed12476d3aa --name cluster-cka-2 --config kind-cluster-new.yaml 
+  759  kind create cluster --image=kindest/node:v1.29.8@sha256:d46b7aa29567e93b27f7531d258c372e829d7224b25e3fc6ffdefed12476d3aa --name cluster-cka-2 --config kind-cluster-new.yaml 
+  760  kubectl get cluster
+  761  kubectl get clusters
+  762  kubectl config get-contexts
+  763  vi kind-cluster-new.yaml
+  764  kind create cluster --config kind-example-config.yaml node-image v1.30.0
+  765  kind create cluster --image=kindest/node:v1.30.4@sha256:976ea815844d5fa93be213437e3ff5754cd599b040946b5cca43ca45c2047114 --name cluster-cka-2 --config kind-cluster-new.yaml 
+  766  docker ps
+  767  docker rm cluster-cka-2-worker2
+  768  docker stop cluster-cka-2-worker2
+  769  docker rm cluster-cka-2-worker2
+  770  docker stop cluster-cka-2-worker
+  771  docker rm cluster-cka-2-worker2
+  772  docker rm cluster-cka-2-worker
+  773  docker rm cluster-cka-2-control-plane
+  774  docker stop cluster-cka-2-control-plane
+  775  docker rm cluster-cka-2-control-plane
+  776  kind create cluster --image=kindest/node:v1.30.4@sha256:976ea815844d5fa93be213437e3ff5754cd599b040946b5cca43ca45c2047114 --name cluster-cka-2 --config kind-cluster-new.yaml 
+  777  kubectl get nodes
+  778  kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.1/manifests/calico.yaml
+  779  kubectl get nodes
+  780  vi app-manifest.yaml
+  781  kubectl apply -f app-manifest.yaml 
+  782  kubectl get pods
+  783  kubectl exec -it frontend -- bash
+  784  kubectl exec -it backend -- bash
+  785  vi networkpolicy.yaml
+  786  kubectl apply -f networkpolicy.yaml 
+  787  kubectl get netpool
+  788  kubectl get net
+  789  kubectl get networkpolicy
+  790  kubectl exec -it frontend -- bash
+  791  kubectl exec -it backend -- bash
+  792  kubectl get pods
+  793  ls
+  794  mkdir -p k8s
+  795  ls
+  796  mv *yaml /k8s
+  797  mv *.yaml /k8s
+  798  mv *.yaml k8s
+  799  ls
+  800  git init k8s
+  801  git status
+  802  ls -ltr
+  803  git init
+  804  git config --global user.name damo0411
+  805  git init k8s
+  806  ls
+  807  git status
+  808  git add k8s
+  809  git add k8s/*
+  810  git status
+  811  git commit -m "k8s yaml commit"
+  812  git status
+  813  git push origin main
+  814  git branch -M main
+  815  git remote add origin git@github.com:damo0411/k8s-yaml.git
+  816  git status
+  817  git push -u origin main
+  818  git branch -m master main
+  819  git push -u origin main
+  820  cd k8s
+  821  ls
+  822  git clone https://github.com/damo0411/k8s-yaml.git
+  823  ls
+  824  mv *.yaml k8s-yaml/
+  825  ls
+  826  ls -ltr
+  827  git status
+  828  git add k8s-yaml/*
+  829  git status
+  830  cd k8s-yaml/
+  831  git status
+  832  git add .
+  833  git status
+  834  git commit -m "yaml files"
+  835  git status
+  836  git branch -M main
+  837  git remote add origin https://github.com/damo0411/k8s-yaml.git
+  838  git push -u origin main
+  839  git remote add origin git@github.com:damo0411/k8s-yaml.git
+  840  git push -u origin main
+  841  ssh-keygen -t ed25519 -C damo0411
+  842  cat /root/.ssh/id_ed25519.pub
+  843  ssh -T git@github.com
+  844  git remote add origin git@github.com:damo0411/k8s-yaml.git
+  845  git push -u origin main
+  846  git remote remove origin
+  847  git remote add origin git@github.com:damo0411/k8s-yaml.git
+  848  git push -u origin main
+  849  git status
+  850  ls
+  851  history >> history.txt
+  852  ls
+  853  ls -ltr
+  854  cat history.txt 
+  855  mv history.txt /k8s
+  856  ls
+  857  cd k8s/
+  858  ls
+  859  cd k8s-yaml/
+  860  ls
+  861  cd ..
+  862  ls
+  863  cd ..
+  864  ls
+  865  history >> history1.txt
